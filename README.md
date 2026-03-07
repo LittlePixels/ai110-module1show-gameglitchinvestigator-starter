@@ -26,13 +26,20 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+The game's purpose is to make guess numbers based upon the difficulty levels of the application. Depending on the difficulty, the user attempts to guess the correct number after x amount of tries. Once the user guesses correctly, the game ends with a surprise shower of balloon gifts. If not correct, then the game simply ends with a ending message. 
 - [ ] Detail which bugs you found.
+Inverted Hint Messages(logic_utils.py:45-48)
+The bug was that the check_guess returned Go HIGHER when the game was too higher and Go LOWER when the game was too low.
+Converted to string on Even Attempts(app.py:97-100)
+Every even number attempt passed turned into a string instead of an int, making hints unrealiable.
 - [ ] Explain what fixes you applied.
-
+Inverted Hint Messages: Swapped the hint messages so each outcome returns the correct direction
+Converted to string on Even Attempts:
+Removed the conditional string conversion, always passes the int secret
 ## 📸 Demo
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
-
+![CorrectOutput](image.png)
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
